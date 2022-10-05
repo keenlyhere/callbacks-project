@@ -32,8 +32,14 @@ function count(array, cb) {
 
   for (let i = 0; i < array.length; i++) {
     let ele = array[i];
+    if(cb(ele) === true){
+      trueCount++
+    }
+
   }
+  return trueCount
 }
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
