@@ -36,7 +36,32 @@ AFTER YOU ARE FINISHED WITH THIS PROBLEM, ASK FOR A CODE REVIEW
 
 function mySimpleReduce(array, cb) {
   // Your code here
+
+  let accum = array[0];
+
+  for (let i = 1 ; i < array.length; i++) {
+    const currEle = array[i];
+    accum = cb(accum, currEle);
+
+  }
+
+  return accum;
 }
+
+// function mySimpleReduce(array, initial, cb) {
+//   // Your code here
+
+//   let accum = initial;
+
+//   for (let i = 0 ; i < array.length; i++) {
+//     const currEle = array[i];
+//     accum = cb(accum, currEle)
+
+//   }
+
+//   return accum;
+// }
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {

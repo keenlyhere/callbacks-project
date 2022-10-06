@@ -30,6 +30,15 @@ console.log(result4);   // false
 
 function none(array, cb) {
   // Your code here
+  for (let i = 0; i < array.length; i++) {
+    let ele = array[i];
+    if (cb(ele) === true) {
+      return false;
+    }
+
+  }
+
+  return true;
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/

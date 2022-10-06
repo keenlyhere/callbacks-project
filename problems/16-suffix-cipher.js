@@ -29,10 +29,27 @@ let cipher2 = {
 };
 console.log(suffixCipher('incremental progress is very instrumental', cipher2));
 // INCREMENTAL progressth isth very INSTRUMENTAL
+
+function suffixCipher(sentence, cipher) {
+
+}
 *******************************************************************************/
 
 function suffixCipher(sentence, cipher) {
   // Your code here
+  let words = sentence.split(" ");
+  let newWords = words.map((word) => {
+    for (let suffix in cipher) {
+      if (word.endsWith(suffix)) {
+        let cb = cipher[suffix];
+        return cb(word);
+      }
+    }
+
+    return word;
+  })
+
+  return newWords.join(" ");
 }
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
