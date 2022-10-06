@@ -13,32 +13,19 @@ console.log(minValueCallback([64, 25, 49, 9, 100], Math.sqrt));  // 3
 function minValueCallback(array, cb) {
     // Your code here
     let smallest = array[0]
-    let cbArray = [];
+
+    for (let i = 1; i < array.length; i++) {
+      let currNum = array[i];
+      if (currNum < smallest) {
+        smallest = currNum;
+      }
+    }
     if (cb === undefined) {
       for (let i = 1; i < array.length; i++) {
-        let currNum = array[i];
-        if (currNum < smallest) {
-          smallest = currNum;
-        }
-      }
-
       return smallest;
+      }
     } else {
-
-      for (let j = 0; j < array.length; j++) {
-        cbArray.push(cb(array[j]))
-      }
-
-      let cbSmallest = cbArray[0];
-      for (let k = 1; k < cbArray.length; k++) {
-        let currCb = cbArray[k];
-
-        if (currCb < cbSmallest) {
-          cbSmallest = currCb;
-        }
-      }
-
-      return cbSmallest;
+      return cb(smallest);
     }
 
 }
