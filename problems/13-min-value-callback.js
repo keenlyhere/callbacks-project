@@ -21,9 +21,7 @@ function minValueCallback(array, cb) {
       }
     }
     if (cb === undefined) {
-      for (let i = 1; i < array.length; i++) {
       return smallest;
-      }
     } else {
       return cb(smallest);
     }
